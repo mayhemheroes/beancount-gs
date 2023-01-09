@@ -2,11 +2,11 @@
 project: beancount-gs
 
 # Target name (should be unique within the project)
-target: beancount-gs
+target: script
 
 # List of commands used to test the target
 cmds:
 
     # Command used to start the target, "@@" is the input file
     # (when "@@" is omitted Mayhem defaults to stdin inputs)
-    - cmd: ./fuzz.libfuzzer
+    - cmd: ./fuzzScript.libfuzzer

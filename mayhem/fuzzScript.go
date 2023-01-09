@@ -1,4 +1,4 @@
-package fuzz
+package fuzzScript
 
 import "strconv"
 import "github.com/beancount-gs/script"

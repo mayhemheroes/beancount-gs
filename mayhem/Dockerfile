@@ -9,10 +9,10 @@ RUN go get github.com/dvyukov/go-fuzz/go-fuzz-dep
 RUN apt update && apt install -y clang
 
 
-RUN go-fuzz-build -libfuzzer -o fuzz.a && \
-    clang -fsanitize=fuzzer fuzz.a -o fuzz.libfuzzer
+RUN go-fuzz-build -libfuzzer -o fuzzScript.a && \
+    clang -fsanitize=fuzzer fuzzScript.a -o fuzzScript.libfuzzer
 
 FROM debian:bookworm-slim
-COPY --from=builder /beancount-gs/mayhem/fuzz.libfuzzer /
+COPY --from=builder /beancount-gs/mayhem/fuzzScript.libfuzzer /
 RUN mkdir -p /.beancount-ns
 RUN touch /.beancount-ns/account_type.json
