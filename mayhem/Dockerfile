@@ -1,5 +1,5 @@
 # FROM fuzzers/go-fuzz:1.2.0
-FROM golang:1.18 as builder
+FROM golang:1.25 as builder
 
 COPY . /beancount-gs
 WORKDIR /beancount-gs/mayhem
